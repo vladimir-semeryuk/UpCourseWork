@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Upcoursework.DTOs", "Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Upcoursework.Validation", "Upcoursework.Validation\Upcoursework.Validation.csproj", "{03F3E3D7-1AAC-472C-940C-04AAD615CAC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Upcoursework.Services.Buyers", "Upcoursework.Services.Buyers\Upcoursework.Services.Buyers.csproj", "{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Upcoursework.Services.Buyers", "Services\Upcoursework.Services.Buyers\Upcoursework.Services.Buyers.csproj", "{09B903BA-922C-4749-B064-DC3328CA09F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,10 +97,10 @@ Global
 		{03F3E3D7-1AAC-472C-940C-04AAD615CAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03F3E3D7-1AAC-472C-940C-04AAD615CAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03F3E3D7-1AAC-472C-940C-04AAD615CAC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B903BA-922C-4749-B064-DC3328CA09F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B903BA-922C-4749-B064-DC3328CA09F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B903BA-922C-4749-B064-DC3328CA09F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B903BA-922C-4749-B064-DC3328CA09F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,7 +121,7 @@ Global
 		{D36850BD-48D7-400B-9507-F792D746AC44} = {58A684DF-B32E-424C-A0C6-07CA5BE4F5E5}
 		{E00D72AF-78B2-4151-9399-EC3558C7C374} = {D36850BD-48D7-400B-9507-F792D746AC44}
 		{03F3E3D7-1AAC-472C-940C-04AAD615CAC7} = {248C95B0-1491-485A-8A11-765952FA0B1B}
-		{D84D16C2-71FF-43C3-A9D7-ABB8CC41B0D5} = {58A684DF-B32E-424C-A0C6-07CA5BE4F5E5}
+		{09B903BA-922C-4749-B064-DC3328CA09F7} = {58A684DF-B32E-424C-A0C6-07CA5BE4F5E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A77055EB-B5F2-4C01-BB2A-A25F135FAECD}

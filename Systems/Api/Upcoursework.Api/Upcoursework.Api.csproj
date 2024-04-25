@@ -36,7 +36,9 @@
     <ProjectReference Include="..\..\..\Data\Upcoursework.Context.Migrations\Upcoursework.Context.Migrations.MSSQL\Upcoursework.Context.Migrations.MSSQL.csproj" />
     <ProjectReference Include="..\..\..\Data\Upcoursework.Context.Migrations\Upcoursework.Context.Migrations.PgSql\Upcoursework.Context.Migrations.PgSql.csproj" />
     <ProjectReference Include="..\..\..\Data\Upcoursework.Context\Upcoursework.Context.csproj" />
+    <ProjectReference Include="..\..\..\Services\DTOs\Upcoursework.DTOs\Upcoursework.DTOs.csproj" />
     <ProjectReference Include="..\..\..\Services\Upcoursework.Services.Authors\Upcoursework.Services.Authors\Upcoursework.Services.Authors.csproj" />
+    <ProjectReference Include="..\..\..\Services\Upcoursework.Services.Buyers\Upcoursework.Services.Buyers.csproj" />
     <ProjectReference Include="..\..\..\Services\Upcoursework.Services.Logger\Upcoursework.Services.Logger.csproj" />
     <ProjectReference Include="..\..\..\Services\Upcoursework.Services.Settings\Upcoursework.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Upcoursework.Services.Buyers\Upcoursework.Services.Buyers.csproj" />
