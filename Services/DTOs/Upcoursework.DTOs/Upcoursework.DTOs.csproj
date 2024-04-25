@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\Upcoursework.Context.Entities\Upcoursework.Context.Entities.csproj" />
+    <ProjectReference Include="..\..\..\Data\Upcoursework.Context\Upcoursework.Context.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Upcoursework.Common\Upcoursework.Common.csproj" />
+    <ProjectReference Include="..\..\..\Upcoursework.Validation\Upcoursework.Validation.csproj" />
+  </ItemGroup>
+
+</Project>
