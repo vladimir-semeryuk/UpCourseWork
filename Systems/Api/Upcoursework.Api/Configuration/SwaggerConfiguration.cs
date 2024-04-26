@@ -11,7 +11,7 @@ namespace Upcoursework.Api.Configuration;
 
 public static class SwaggerConfiguration
 {
-    private static string AppTitle = "DSR NetSchool API";
+    private static string AppTitle = "UpCourseWork API";
 
     /// <summary>
     /// Add OpenAPI to API

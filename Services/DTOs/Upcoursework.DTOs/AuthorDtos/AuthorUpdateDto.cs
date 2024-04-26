@@ -102,9 +102,9 @@ public class AuthorUpdateDtoValidator : AbstractValidator<AuthorUpdateDto>
     {
         RuleFor(x => x.DisplayName).DisplayName();
 
-        RuleFor(x => x.SkillIds).SkillsExistance(contextFactory);
+        RuleForEach(x => x.SkillIds).SkillExistance(contextFactory);
 
-        RuleFor(x => x.SubjectIds).SubjectsExistance(contextFactory);
+        RuleForEach(x => x.SubjectIds).SubjectExistance(contextFactory);
 
         RuleFor(x => x.Description).AuthorDescription();
 

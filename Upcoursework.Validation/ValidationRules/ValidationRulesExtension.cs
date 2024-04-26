@@ -57,30 +57,95 @@ public static class ValidationRuleExtensions
             })
             .WithMessage("A skill with the same title already exists");
     }
-    public static IRuleBuilderOptions<T, ICollection<Guid>> SkillsExistance<T>(this IRuleBuilder<T, ICollection<Guid>> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    public static IRuleBuilderOptions<T, Guid> SkillExistance<T>(this IRuleBuilder<T, Guid> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
     {
         return ruleBuilder
-            .NotEmpty().WithMessage("At least one skill is required")
-            .Must((ids) =>
+            .NotEmpty().WithMessage("Skill Id is required")
+            .Must((id) =>
             {
                 using var context = contextFactory.CreateDbContext();
-                var skillsExist = ids.All(id => context.Skills.Any(s => s.Uid == id));
-                return skillsExist;
-            }).WithMessage("One or more skills not found");
+                var skillExist = context.Skills.Any(s => s.Uid == id);
+                return skillExist;
+            }).WithMessage("Skill not found");
+    }
+    public static IRuleBuilderOptions<T, Guid> BuyerExistance<T>(this IRuleBuilder<T, Guid> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    {
+        return ruleBuilder
+            .NotEmpty().WithMessage("Buyer Id is required")
+            .Must((id) =>
+            {
+                using var context = contextFactory.CreateDbContext();
+                var buyerExist = context.Buyers.Any(s => s.Uid == id);
+                return buyerExist;
+            }).WithMessage("Buyer not found");
+    }
+    public static IRuleBuilderOptions<T, Guid?> AuthorExistance<T>(this IRuleBuilder<T, Guid?> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    {
+        return ruleBuilder
+            .NotEmpty().WithMessage("Author Id is required")
+            .Must((id) =>
+            {
+                using var context = contextFactory.CreateDbContext();
+                var authorExist = context.Authors.Any(s => s.Uid == id);
+                return authorExist;
+            }).WithMessage("Author not found");
     }
 
     //.Must(skills => skills.Distinct().Count() == skills.Count())
     //        .WithMessage("Duplicate skills are not allowed.")
-    public static IRuleBuilderOptions<T, ICollection<Guid>> SubjectsExistance<T>(this IRuleBuilder<T, ICollection<Guid>> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    //public static IRuleBuilderOptions<T, ICollection<Guid>> SubjectsExistance<T>(this IRuleBuilder<T, ICollection<Guid>> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    //{
+    //    return ruleBuilder
+    //        .NotEmpty().WithMessage("At least one subject is required")
+    //        .Must((ids) =>
+    //        {
+    //            using var context = contextFactory.CreateDbContext();
+    //            var subjectsExist = ids.All(id => context.Subjects.Any(s => s.Uid == id));
+    //            return subjectsExist;
+    //        }).WithMessage("One or more subjects not found");
+    //}
+    public static IRuleBuilderOptions<T, Guid> SubjectExistance<T>(this IRuleBuilder<T, Guid> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
     {
         return ruleBuilder
             .NotEmpty().WithMessage("At least one subject is required")
-            .Must((ids) =>
+            .Must((id) =>
             {
                 using var context = contextFactory.CreateDbContext();
-                var subjectsExist = ids.All(id => context.Subjects.Any(s => s.Uid == id));
-                return subjectsExist;
-            }).WithMessage("One or more subjects not found");
+                var subjectExist = context.Subjects.Any(s => s.Uid == id);
+                return subjectExist;
+            }).WithMessage("Subject not found");
+    }
+    public static IRuleBuilderOptions<T, Guid?> SubjectExistance<T>(this IRuleBuilder<T, Guid?> ruleBuilder, IDbContextFactory<MainDbContext> contextFactory)
+    {
+        return ruleBuilder
+            .NotEmpty().WithMessage("At least one subject is required")
+            .Must((id) =>
+            {
+                using var context = contextFactory.CreateDbContext();
+                var subjectExist = context.Subjects.Any(s => s.Uid == id);
+                return subjectExist;
+            }).WithMessage("Subject not found");
+    }
+
+    public static IRuleBuilderOptions<T, string> OrderTitle<T>(this IRuleBuilder<T, string> ruleBuilder)
+    {
+        return ruleBuilder
+            .NotEmpty().WithMessage("Order title is required")
+            .MinimumLength(2).WithMessage("Minimum length is 1")
+            .MaximumLength(200).WithMessage("Maximum length is 200");
+    }
+    public static IRuleBuilderOptions<T, decimal> OrderBudget<T>(this IRuleBuilder<T, decimal> ruleBuilder)
+    {
+        return ruleBuilder
+            .GreaterThanOrEqualTo(0)
+            .WithMessage("Budget cannot be negative");
+    }
+    public static IRuleBuilderOptions<T, string> OrderDescription<T>(this IRuleBuilder<T, string> ruleBuilder)
+    {
+        return ruleBuilder
+            .NotEmpty().WithMessage("Description is required")
+            .MinimumLength(5).WithMessage("Minimum length is 5")
+            .MaximumLength(10000).WithMessage("Maximum length is 10000");
     }
 
 }

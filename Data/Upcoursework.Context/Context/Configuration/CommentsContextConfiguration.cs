@@ -24,6 +24,5 @@ public static class CommentsContextConfiguration
             .HasOne(x => x.Author)
             .WithMany(x => x.Comments)
             .HasForeignKey(x => x.AuthorId);
-        modelBuilder.Entity<Comment>();
     }
 }

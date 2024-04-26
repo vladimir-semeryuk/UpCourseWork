@@ -19,9 +19,9 @@ public static class AuthorsContextConfiguration
 
         modelBuilder.Entity<Author>().Property(x => x.Description).HasMaxLength(5000);
 
-        modelBuilder.Entity<Author>()
-            .HasMany(x => x.Comments)
-            .WithOne(x => x.Author)
-            .HasForeignKey(x => x.AuthorId);
+        //modelBuilder.Entity<Author>()
+        //    .HasMany(x => x.Comments)
+        //    .WithOne(x => x.Author)
+        //    .HasForeignKey(x => x.AuthorId);
     }
 }

@@ -22,7 +22,7 @@ public class AuthorGetDto
     public required string Country { get; set; }
     public ICollection<SubjectGetDto> Subjects { get; set; }
     public ICollection<SkillGetDto> Skills { get; set; }
-    public ICollection<OrderGetModel> Orders { get; set; }
+    public ICollection<OrderGetDto> Orders { get; set; }
     public ICollection<CommentGetDto> Comments { get; set; }
     public ICollection<FeedbackGetDto> Feedback { get; set; }
 }

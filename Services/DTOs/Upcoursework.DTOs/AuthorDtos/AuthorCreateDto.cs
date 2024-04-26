@@ -105,8 +105,8 @@ public class AuthorCreateDtoValidator : AbstractValidator<AuthorCreateDto>
     {
         RuleFor(x => x.DisplayName).DisplayName();
 
-        RuleFor(dto => dto.SkillIds)
-            .SkillsExistance(contextFactory)
+        RuleForEach(dto => dto.SkillIds)
+            .SkillExistance(contextFactory)
             .When(dto => dto.SkillIds != null); // Only apply this rule when SkillIds are provided
 
         RuleFor(dto => dto.NewSkills)
@@ -119,8 +119,8 @@ public class AuthorCreateDtoValidator : AbstractValidator<AuthorCreateDto>
             .UniqueSkillTitle(contextFactory)
             .When(dto => dto.NewSkills != null);
 
-        RuleFor(dto => dto.SubjectIds)
-            .SubjectsExistance(contextFactory)
+        RuleForEach(dto => dto.SubjectIds)
+            .SubjectExistance(contextFactory)
             .When(dto => dto.SubjectIds!= null); // Only apply this rule when SubjectIds are provided
 
         RuleFor(dto => dto.NewSubjects)

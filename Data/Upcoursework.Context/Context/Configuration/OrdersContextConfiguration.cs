@@ -8,6 +8,7 @@ public static class OrdersContextConfiguration
     {
         modelBuilder.Entity<Order>().ToTable("orders");
         //modelBuilder.Entity<Order>().Property(x => x.Subject).IsRequired();
+        modelBuilder.Entity<Order>().Property(x => x.Title).IsRequired().HasMaxLength(200);
         modelBuilder.Entity<Order>().Property(x => x.Budget).IsRequired();
         modelBuilder.Entity<Order>().Property(x => x.Description).HasMaxLength(10000);
 
@@ -15,5 +16,10 @@ public static class OrdersContextConfiguration
             .HasOne(x => x.Author)
             .WithMany(x => x.Orders)
             .HasForeignKey(x => x.AuthorId);
+
+        modelBuilder.Entity<Order>()
+            .HasOne(x => x.Buyer)
+            .WithMany(x => x.Orders)
+            .HasForeignKey(x => x.BuyerId);
     }
 }

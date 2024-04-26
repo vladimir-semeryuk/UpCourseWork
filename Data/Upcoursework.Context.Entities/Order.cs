@@ -24,4 +24,6 @@ public class Order : BaseEntity
     public virtual required ICollection<Skill> SkillsRequired { get; set; }
     public int? AuthorId { get; set; }
     public virtual Author? Author { get; set; }
+    public int BuyerId { get; set; }
+    public virtual Buyer Buyer { get; set; }
 }
